@@ -24,7 +24,7 @@ Write-Host "---------------------------------"
 ask
   }
 
-
+<# Yes I could just use ToInt for the conversion but I was bored so I decided to complicate things #>
 function convertFromBinary(){
 Write-Host ""
 $text = Read-Host Write a number in binary to convert it to decimal
