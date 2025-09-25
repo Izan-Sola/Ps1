@@ -1,5 +1,5 @@
 
-Set-Location C:\Users\2smra
+Set-Location $Env:UserProfile
 
 function askHost() {
 
@@ -13,9 +13,7 @@ function askHost() {
       Write-Output "Invalid windows version"
       askHost
  }
-
 }
-
 Write-Output ""
 
 function DelOrNot ($duplicatedList) {
@@ -29,34 +27,25 @@ function DelOrNot ($duplicatedList) {
                   } 
                     Write-Output "You can now close the powershell."
 
-                  #  if ( ($YesNo -eq "N") -or ($YesNo -eq "n") ) { Write-Output "You can now close the powershell." }
-                  #  ElseIf ( ($YesNo -eq "Y") -or ($YesNo -eq "y") ) {
-
-                  #          Get-ChildItem .\ -Recurse -File | 
-                  #          Where-Object { $_.Name -match $regExpression } |
-                  #          Remove-Item
-    
-                  #           Write-Output "All the duplicatedList files have been removed."
-                  #         }
                     }
 
 function searchFile($regExpression) {
 
   $duplicatedList = @()
-foreach ($file in Get-ChildItem .\ -Recurse -File | 
-          Where-Object { $_.Name -match $regExpression } | Select-Object -ExpandProperty FullName) {
+      foreach ($file in Get-ChildItem .\ -Recurse -File | 
+                Where-Object { $_.Name -match $regExpression } | Select-Object -ExpandProperty FullName) {
 
-          $duplicatedList+=$file
-         
-        }
-          Write-Output $duplicatedList
+                $duplicatedList+=$file
+              
+              }
+                Write-Output $duplicatedList
 
-         if([string]::IsNullOrEmpty($file)) {
-             Write-Output "No files have been found."
-             Write-Output ""
-             Write-Output "You can now close the powershell."
-           }
-           else { DelOrNot($duplicatedList)}
+              if([string]::IsNullOrEmpty($file)) {
+                  Write-Output "No files have been found."
+                  Write-Output ""
+                  Write-Output "You can now close the powershell."
+                }
+                else { DelOrNot($duplicatedList)}
 }
 Write-Output ""
 askHost
