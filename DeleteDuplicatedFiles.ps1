@@ -7,7 +7,7 @@ function askHost() {
   Write-Output "All the duplicatedList files are going to be shown."
   Write-Output ""
 
-  if($winver -eq "11") { searchFile(".*\-\ copia\..*") }
+  if($winver -eq "11") { searchFile(".*\-\ copy\..*") }
   elseif ($winver -eq "10") { searchFile(".*\([0-9]?[0-9]\)\.[A-z,0-9]{2,4}") }
   else {
       Write-Output "Invalid windows version"
@@ -51,3 +51,4 @@ Write-Output ""
 askHost
 
 pause
+
