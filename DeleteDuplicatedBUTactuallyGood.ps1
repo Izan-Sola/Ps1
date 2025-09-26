@@ -1,4 +1,4 @@
-cd $env:UserProfile\Desktop
+cd $env:UserProfile
 
 Write-Output "All the dulicated files with their path are going to be shown, please wait.`n"
 
@@ -34,4 +34,5 @@ pause
 
 
 #Regex for later: ".*\-\ copia\..*"
+
 # ".*\([0-9]?[0-9]\)\.[A-z,0-9]{2,4}"
