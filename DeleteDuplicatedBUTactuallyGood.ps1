@@ -15,7 +15,7 @@ foreach ($group in $duplicatedFiles) {
 }
 
  Write-Output $removableList
-if([String]::IsNullOrEmpty($removableList[1])) {
+if([String]::IsNullOrEmpty($removableList[0])) {
     Write-Output "No files have been found.`n"
 } else {
         $YesNo = Read-Host -Prompt "`nDo you want to delete all the duplicated files? (Y/N)`n"
