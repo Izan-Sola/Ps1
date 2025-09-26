@@ -1,7 +1,7 @@
 
 
 
-# # THIS SHIT STINKS!! CHECK "DeleteDuplicatedFilesBUTactuallyGood" instead
+# # THIS SHIT STINKS!! CHECK "DeleteDuplicatedBUTactuallyGood" instead
 
 
 # Set-Location $Env:UserProfile
@@ -56,5 +56,6 @@
 # askHost
 
 # pause
+
 
 
